@@ -48,4 +48,4 @@ figure(2);
 imshow(b8+b7);  title('b8+b7');
 
 figure(3);
-imshow(b8+b7+b6+b5); title('b8+b7+b6+b5+b4');
+imshow(b8+b7+b6+b5+b4); title('b8+b7+b6+b5+b4');
