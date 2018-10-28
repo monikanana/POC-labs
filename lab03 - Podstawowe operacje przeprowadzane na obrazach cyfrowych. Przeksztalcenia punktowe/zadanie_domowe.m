@@ -7,8 +7,8 @@ clc;
 img = imread('resources/100zloty.jpg');
 I = rgb2gray(img);
 
-% b1 - tablica najmniej znacz?cych bitów warto?ci I, b8 - najbardziej
-% znacz?cych
+% b1 - tablica najmniej znaczacych bitow warto?ci I, b8 - najbardziej
+% znaczacych
 b1 = double(bitget(I,1));
 b2 = double(bitget(I,2)); 
 b3 = double(bitget(I,3)); 
@@ -34,7 +34,7 @@ subplot(3,3,9); imshow(b8); title('8. bit (najbardziej znaczcy)');
 
 I_bin = uint8(cat(8,b1,b2,b3,b4,b5,b6,b7,b8));
 
-% zamiana warto?ci binarnych na uint8
+% zamiana wartosci binarnych na uint8
 b1 = I_bin(:,:,1);
 b2 = I_bin(:,:,2)*2;
 b3 = I_bin(:,:,3)*4;
