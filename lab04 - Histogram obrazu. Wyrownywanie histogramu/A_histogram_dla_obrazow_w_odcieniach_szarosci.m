@@ -53,3 +53,27 @@ hold off;
 figure(6);
 subplot(2,2,1:2); bar(x,H); xlim([0 255]); title('histogram');
 subplot(2,2,3:4); bar(x,C2); xlim([0 255]); title('histogram skumulowany');
+
+%% zad 10 - wyrównanie histogramu (HE)
+
+% przeskalowanie C2 do wartosci z zakresu 0-255
+C2_przeskalowany = zeros(3,1);
+for i = 1:256
+   C2_przeskalowany(i) = C2(i) * (256/C2(256));
+end;
+C2_przeskalowany = uint8(C2_przeskalowany);
+img_wyrownany = intlut(hist_1_adjusted, C2_przeskalowany);
+
+figure(7);
+subplot(3,1,1); imshow(img_wyrownany); title('obrazek po przeksztalceniu');
+subplot(3,1,2); imhist(img_wyrownany); title('jego histogram');
+[H_wyrowany,x_wyrowany] = imhist(img_wyrownany);
+subplot(3,1,3); bar(x_wyrowany, cumsum(H_wyrowany)); xlim([0 255]); title('histogram skumulowany');
+
+%% zad 13
+hist2 = imread('resources/hist2.bmp');
+figure(8);
+subplot(6,1,1); imshow(hist2); title('oryginalny');
+subplot(6,1,2); imhist(imadjust(hist2)); title('histogram rozciagniety');
+subplot(6,1,4); imhist(histeq(hist2)); title('histogram wyrownany HE');
+subplot(6,1,6); imhist(adapthisteq(hist2)); title('histogram wyrownany CLAHE');
