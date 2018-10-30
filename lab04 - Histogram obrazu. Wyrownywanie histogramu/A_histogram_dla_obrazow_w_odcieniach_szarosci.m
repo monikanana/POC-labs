@@ -71,9 +71,10 @@ subplot(3,1,2); imhist(img_wyrownany); title('jego histogram');
 subplot(3,1,3); bar(x_wyrowany, cumsum(H_wyrowany)); xlim([0 255]); title('histogram skumulowany');
 
 %% zad 13
-hist2 = imread('resources/hist2.bmp');
+I = imread('resources/hist4.jpg');
 figure(8);
-subplot(6,1,1); imshow(hist2); title('oryginalny');
-subplot(6,1,2); imhist(imadjust(hist2)); title('histogram rozciagniety');
-subplot(6,1,4); imhist(histeq(hist2)); title('histogram wyrownany HE');
-subplot(6,1,6); imhist(adapthisteq(hist2)); title('histogram wyrownany CLAHE');
+subplot(9,1,1:3); imshow(I); title('oryginalny');
+subplot(9,1,5); imhist(imadjust(I)); title('histogram rozciagniety');
+subplot(9,1,7); imhist(histeq(I)); title('histogram wyrownany HE');
+subplot(9,1,9); imhist(adapthisteq(I)); title('histogram wyrownany CLAHE');
+% mozna testowac powyzsze funckje z obrazami hist2.bmp,hist2.bmp, hist4.jpg
