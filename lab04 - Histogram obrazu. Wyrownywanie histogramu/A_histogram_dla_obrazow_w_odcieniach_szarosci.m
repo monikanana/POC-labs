@@ -37,7 +37,7 @@ bar(x,H); % wyswietlenie histogramu - alternatywa dla imhist(I);
 C = cumsum(imhist(hist1)); % wartosci histogramu skumulowanego 
 
 % skalowanie histogramu skumulowanego tak, aby si? zmie?ci? na wykresie
-% (dlaczego? sprawd?: plot(C); <- max(C) = 57120!
+% dlaczego? sprawdz: plot(C); <- max(C) = 57120!
 k = max(C)/max(H); 
 C2 = C/k;
 
