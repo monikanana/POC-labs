@@ -50,19 +50,20 @@ legend([p1;p2], n1, n2);
 hold off;
 
 %% zad 9
+
 figure(6);
 subplot(2,2,1:2); bar(x,H); xlim([0 255]); title('histogram');
 subplot(2,2,3:4); bar(x,C2); xlim([0 255]); title('histogram skumulowany');
 
-%% zad 10 - wyrównanie histogramu (HE)
+%% zad 10 - wyrownanie histogramu (HE)
 
 % przeskalowanie C2 do wartosci z zakresu 0-255
-C2_przeskalowany = zeros(3,1);
-for i = 1:256
-   C2_przeskalowany(i) = C2(i) * (256/C2(256));
-end;
+%C2_przeskalowany = zeros(3,1);
+%for i = 1:256
+   C2_przeskalowany = C * (256/max(C));
+%end
 C2_przeskalowany = uint8(C2_przeskalowany);
-img_wyrownany = intlut(hist_1_adjusted, C2_przeskalowany);
+img_wyrownany = intlut(hist1, C2_przeskalowany);
 
 figure(7);
 subplot(3,1,1); imshow(img_wyrownany); title('obrazek po przeksztalceniu');
