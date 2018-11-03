@@ -36,7 +36,7 @@ figure(4);
 bar(x,H); % wyswietlenie histogramu - alternatywa dla imhist(I);
 C = cumsum(imhist(hist1)); % wartosci histogramu skumulowanego 
 
-% skalowanie histogramu skumulowanego tak, aby si? zmie?ci? na wykresie
+% skalowanie histogramu skumulowanego tak, aby sie zmiescil na wykresie
 % dlaczego? sprawdz: plot(C); <- max(C) = 57120!
 k = max(C)/max(H); 
 C2 = C/k;
@@ -58,10 +58,8 @@ subplot(2,2,3:4); bar(x,C2); xlim([0 255]); title('histogram skumulowany');
 %% zad 10 - wyrownanie histogramu (HE)
 
 % przeskalowanie C2 do wartosci z zakresu 0-255
-%C2_przeskalowany = zeros(3,1);
-%for i = 1:256
-   C2_przeskalowany = C * (256/max(C));
-%end
+C2_przeskalowany = C * (256/max(C));
+
 C2_przeskalowany = uint8(C2_przeskalowany);
 img_wyrownany = intlut(hist1, C2_przeskalowany);
 
