@@ -25,10 +25,10 @@ srednia = 0;
 
 for x = 1:X
     for y = 1:Y
-        i_last = mod(i,20) + 1;
+        i_last = mod(i,N) + 1;
         srednia = srednia + (kolejka(i) - kolejka(i_last)) / N;
         
-        i = mod(i,20) + 1;
+        i = mod(i,N) + 1;
         
         T = a *  srednia;
         
