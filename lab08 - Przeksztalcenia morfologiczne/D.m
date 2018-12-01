@@ -25,7 +25,7 @@ figure(3);
 subplot(1,2,1); imshow(I_step_2); title('oryginal - otwarcie przez rekonstrukcje');
 subplot(1,2,2); imshow(imtophat(I, ones(1,71))); title('porownanie: oryginal - klasyczne otwarcie');
 
-%% krok 3: otwarcie przez rekonstrukcje
+%% krok 3: otwarcie przez rekonstrukcje (zad:5)
 I_step_3 = imerode(I_step_2, ones(1,11));
 marker = I_step_3;
 maska = I_step_2;
@@ -33,7 +33,7 @@ I_step_3 = imreconstruct(marker, maska);
 figure(4);
 imshow(I_step_3); title('oryginal - otwarcie przez rekonstrukcje');
 
-%% krok 4: dylatacja i rekonstrukcja
+%% krok 4: dylatacja i rekonstrukcja (zad:6)
 I_step_4 = imdilate(I_step_3, ones(1,21));
 marker = min(I_step_4, I_step_2);
 maska = I_step_2;
