@@ -64,7 +64,10 @@ figure(6);
 subplot(2,1,1); imshow(I); title('oryginalny');
 subplot(2,1,2); imshow(imclose(imopen(I, SE), SE)); title('czysta ertka');
 
-%% zad 13 - trafil, nie trafil
+%% zad 13 - trafi, nie trafi
 I = imread('resources/hom.bmp');
 figure(7);
 subplot(2,1,1); imshow(I); title('oryginalny');
+SE1 = [0 1 0; 1 1 1; 0 1 0];
+SE2 = [1 0 1; 0 0 0; 1 0 1];
+subplot(2,1,2); imshow(bwhitmiss(I, SE1, SE2)); title('trafi nie trafi');
