@@ -1,6 +1,6 @@
 close all;
 clearvars;
-%clc;
+clc;
 
 I = imread('resources/fingerprint.bmp');
 
