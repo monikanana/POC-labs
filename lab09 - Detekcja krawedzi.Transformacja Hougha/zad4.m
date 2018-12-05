@@ -17,6 +17,8 @@ I = imclearborder(I);
 I = edge(I, 'sobel', 0.06);
 subplot(2,2,2); imshow(I); 
 
+% TODO
+
 
 
 
