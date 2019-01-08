@@ -67,7 +67,8 @@ for i = 1:numel(segRes_unique_2)
 end
 
 I_final = label2rgb(segRes);
-imshow(I_final); title('Img Final');
+subplot(2,1,1); imshow(I); title('Oryginalny');
+subplot(2,1,2); imshow(I_final); title('Po segmentacji');
 
 
 
