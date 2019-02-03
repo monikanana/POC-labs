@@ -51,11 +51,11 @@ subplot(2,1,2); imshow(imdilate(I,SE)); title('dylatacja, SE: kwadrat 3x3');
 SE = strel('square', 3);
 I = imread('resources/kolka.bmp'); % testuj dla wyspa.bmp, ertka.bmp, kolka.bmp
 figure(5);
-subplot(5,1,1); imshow(I); title('oryginalny');
-subplot(5,1,2); imshow(imerode(I, SE)); title('erozja, SE: kwadrat 3x3');
-subplot(5,1,3); imshow(imdilate(I, SE)); title('dylatacja, SE: kwadrat 3x3');
-subplot(5,1,4); imshow(imopen(I, SE)); title('otwarcie, SE: kwadrat 3x3');
-subplot(5,1,5); imshow(imclose(I,SE)); title('zamkniecie, SE: kwadrat 3x3');
+subplot(3,2,1); imshow(I); title('oryginalny');
+subplot(3,2,2); imshow(imerode(I, SE)); title('erozja, SE: kwadrat 3x3');
+subplot(3,2,3); imshow(imdilate(I, SE)); title('dylatacja, SE: kwadrat 3x3');
+subplot(3,2,4); imshow(imopen(I, SE)); title('otwarcie, SE: kwadrat 3x3');
+subplot(3,2,5); imshow(imclose(I,SE)); title('zamkniecie, SE: kwadrat 3x3');
 
 %% zad 11 - mini zadanko :D
 I = imread('resources/ertka.bmp');
